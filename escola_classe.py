@@ -43,8 +43,10 @@ class Escola:
             self.__inadimp = 0
         elif self.__divida < 0:
             print(f'Você possui um crédito de R$ {-(self.__divida):.2f}.')
+            self.__inadimp = 0
         else:
             print(f'Faltam R$ {self.__divida:.2f} para quitar sua dívida.')
+             
 
     def notas(self):
         print(f'Português: {self.__port}')
