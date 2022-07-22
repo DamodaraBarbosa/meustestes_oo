@@ -18,8 +18,33 @@ class Escola:
         self.__fis = fis
         self.__bio = bio
         self.__edfis = edfis
+        self.__divida = mensalidade * inadimp
         self.__mensalidade = mensalidade
-        self._inadimp = inadimp
+        self.__inadimp = inadimp
+    
+    def infos_pessoais(self):
+        print(f'Nome: {self.__nome}')
+        print(f'Data de nascimento: {self.__data_nasc}')
+        print(f'Idade: {self.__idade} anos')
+    
+    def infos_esc(self):
+        print(f'Série: {self.__serie}')
+        print(f'Vestibular: {self.__vestibular}')
+    
+    def infos_finan(self):
+        print(f'Mensalidade: {self.__mensalidade}')
+        print(f'Inadimplência: {self.__inadimp} meses')
+    
+    def pagamento(self, valor):
+        self.__divida -= valor
+        if self.__divida == 0:
+            divida = valor
+            print(f'Sua dívida de R$ {divida:.2f} foi quitada!')
+            self.__inadimp = 0
+        elif self.__divida < 0:
+            print(f'Você possui um crédito de R$ {-(self.__divida):.2f}.')
+        else:
+            print(f'Faltam R$ {self.__divida:.2f} para quitar sua dívida.')
 
     def notas(self):
         print(f'Português: {self.__port}')
@@ -55,3 +80,11 @@ class Escola:
     @property
     def nome(self):
         return self.__nome
+    
+    @property
+    def divida(self):
+        return self.__divida
+    
+    @property
+    def inadimp(self):
+        return self.__inadimp

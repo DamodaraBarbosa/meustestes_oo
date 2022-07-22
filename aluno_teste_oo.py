@@ -54,9 +54,17 @@ for i in range(0, 20):
     aluno.clear()
 
 texto = ''
+arquivo = open('dados_alunos.txt', 'w')
+# for i, v in enumerate(dados):
+#     listaIndex=''
+#     for j in v:
+#         listaIndex += f"{j} "
+#     listaIndex += "\n"
+#     texto += listaIndex
+# arquivo.writelines(texto)
 
-for i, v in enumerate(dados):
-    arquivo = open('dados_alunos.txt', 'w')
-    arquivo.writelines(f'conta{i+1}: {v}')
+for dado in dados:
+    texto += f"Nome: {dado["nome"]}, Idade: {dado["idade"]}\n"
+
 
 
