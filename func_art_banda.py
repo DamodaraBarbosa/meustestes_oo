@@ -1,50 +1,31 @@
 from random import randint, uniform, choice, randrange
 
 def nome_mpb(probabilidade):
-    mpb_masc = ['João', 'José', 'Caetano', 'Chico', 'Buarque', 'Belquior', 'Caetano', 'Baden', 'Vinicius', 'Moraes',
-    'Gilberto', 'Gil', 'Silva', 'Nilton', 'Francisco', 'Marcos', 'Zé', 'Ramalho', 'Maia', 'Tim']
-    mpb_fem = ['Ana', 'Gadú', 'Magalhães', 'Betânia', 'Elis', 'Regina', 'Calcanhoto', 'Nara', 'Leão', 'Maísa', 'Maria',
-    'Cássia', 'Clara', 'Costa', 'Marisa', 'Monte', 'Rita', 'Elza', 'Soares', 'Bia', 'Nunes']
-    # indie_masc = ['Tim', 'Bernardes', 'Rex', 'Orange', 'Mac', 'Marco', 'Steve', 'Lace', 'Kevin', 'Parker', 'Ed',
-    # 'Stones', 'Rock', 'Day', 'Brown', 'Matt', 'John', 'Ken', 'Johnes', 'Kirk']
-    # indie_fem = ['Claire', 'Brown', 'Max', 'Sharpe', 'Vanessa', 'Lorde', 'Girl', 'Red', 'Dua', 'Lorde', 'Aurora', 
-    # 'Bird', 'Lore', 'Del', 'Sun', 'Rey', 'Lana', 'Alice', 'Sharon', 'Gabi']
-    # sert_masc = ['Bruno', 'Camargo', 'Matheus', 'Zezé', 'Gustavo', 'Lima', 'Roger', 'Beto', 'Barreto', 'Pablo', 'Costa',
-    # 'Eduardo', 'Walter', 'Fabiano', 'Menotti', 'Bosco', 'João', 'Kauan', 'Mioto', 'Nathan']
-    # sert_fem = ['Simone', 'Simaria', 'Maiara', 'Maraísa','Fernandes', 'Mendonça', 'Marília', 'Paula', 'Roberta', 'Miranda',
-    # 'Prado', 'Luana', 'Almeida', 'Solange', 'Maria', 'Fagundes', 'Mattos', 'Rafaela', 'Viola', 'Pinheiro']
-    # hiphop = ['Chris', 'Luda', 'Jay', 'Akon', 'Z', 'Steve', 'Knight', 'Eminem', 'Fifty', 'Lil', 'Brown', 'Mac', 'Book',
-    # 'Average', 'Sabotage', 'Tupac', 'Notorious', 'BIG', 'Hill', 'Rakim', 'Lil Nas', 'X', 'Malcom', 'Wayne', 'Sean', 'King']
-    # samba_masc = ['Zeca', 'Arlindo', 'Diogo', 'Nogueira', 'Pagodinho', 'Xand', 'Cumpadi', 'Washington', 'Cartola', 'Cruz',
-    # 'Mumuzinho', 'Tiago', 'Chico', 'Mané', 'Qualé', 'Jorge', 'Aragão', 'Paulinho', 'Da Viola', 'Noel', 'Rosa', 'Marcinho']
-    # samba_fem = ['Ana', 'Beth', 'Alcione', 'Carvalho', 'Dona', 'Ivone', 'Lara', 'Teresa', 'Cristina', 'Leci', 'Brandão', 'Cristina',
-    # 'Matha', 'Paola', 'De Lara', 'Clara', 'Nunes', 'Mariene', 'De Castro', 'Nilze']
-    # eletronica = ['Fog', 'Sampa', 'Alok', 'David', 'Gueta', 'Snake', 'Chainsmoker', 'Rule', 'Avicii', 'Bambo', 'Vapo',
-    # 'Avek', 'Light', 'Trap', 'Vapo', 'Mathias', 'Yanis', 'Ludaguy', 'Walk', 'Drinker']
-    # rock = ['Beatles', 'Rolling', 'Stones', 'Black', 'Sabath', 'Killers', 'Strokes', 'Tame', 'Impala', 'Guns', 'Roses', 'Pond',
-    # 'Pixies', 'Police', 'Doors', 'Joy', 'Division', 'Led', 'Zepellin', 'Nirvana', 'Queen', 'Iron', 'Maiden', 'Mettalica', 'Pink', 'Floyd',
-    # 'Ramones', 'Bon', 'Jovi', 'Scorpions', 'Kiss', 'Rush', 'Eagles', 'Foo', 'Fighters', 'Linkin', 'Park', 'Slayer', 'Journey', 'Tool']
-
+    mpb_masc = [['João', 'José', 'Caetano', 'Chico', 'Baden', 'Vinicius', 'Gilberto', 'Nilton', 'Francisco', 'Marcos', 'Zé', 'Tim'], ['Buarque', 'Belquior', 'Moraes', 
+    'Gil', 'Silva', 'Ramalho', 'Maia', 'Powell']]
+    mpb_fem = [['Ana', 'Gadú', 'Elis', 'Nara', 'Leão', 'Maísa', 'Maria', 'Cássia', 'Clara', 'Marisa', 'Rita', 'Elza', 'Bia'], 
+    ['Calcanhoto', 'Nunes', 'Soares', 'Lee', 'Monte', 'Costa', 'Leão', 'Regina', 'Magalhães', 'Betânia']]
+    
     nome_art_banda = list()
 
     
     if probabilidade <= 30:
         probabilidade_in = randint(1, 100)
         if probabilidade_in <= 40:
-            nome_art_banda.append(choice(mpb_fem))
+            nome_art_banda.append(choice(mpb_fem[0]))
             if choice(mpb_fem) not in nome_art_banda:
-                nome_art_banda.append(choice(mpb_fem))
+                nome_art_banda.append(choice(mpb_fem[1]))
         else:
-            nome_art_banda.append(choice(mpb_fem))
+            nome_art_banda.append(choice(mpb_fem[0]))
     else:
         probabilidade_in = randint(1, 100)
         if probabilidade_in <= 40:
-            nome_art_banda.append(choice(mpb_masc))
+            nome_art_banda.append(choice(mpb_masc[0]))
             if choice(mpb_fem) not in nome_art_banda:
-                nome_art_banda.append(choice(mpb_masc))
+                nome_art_banda.append(choice(mpb_masc[1]))
         else:
-            nome_art_banda.append(choice(mpb_masc))
-    return ' '. join(nome_art_banda[0:])
+            nome_art_banda.append(choice(mpb_masc[0]))
+    return ' '.join(nome_art_banda[0:])
 
 def nome_pop(probabilidade):
     pop_masc = ['Ed', 'Mayer', 'John', 'Walker', 'Bruno', 'Mars', 'Sheeran', 'Justin', 'Elthon', 'Michael', 'Jackson',
@@ -145,4 +126,100 @@ def nome_hiphop(probabilidade):
         if choice(hiphop) not in nome_art_banda:
             nome_art_banda.append(choice(hiphop))
     return ' '.join(nome_art_banda[0:])
-    
+
+def nome_indie(probabilidade):
+    indie_masc = ['Tim', 'Bernardes', 'Rex', 'Orange', 'Mac', 'Marco', 'Steve', 'Lace', 'Kevin', 'Parker', 'Ed',
+    'Stones', 'Rock', 'Day', 'Brown', 'Matt', 'John', 'Ken', 'Johnes', 'Kirk']
+    indie_fem = ['Claire', 'Brown', 'Max', 'Sharpe', 'Vanessa', 'Lorde', 'Girl', 'Red', 'Dua', 'Aurora', 
+    'Bird', 'Lore', 'Del', 'Sun', 'Rey', 'Lana', 'Alice', 'Sharon', 'Gabi']
+
+    nome_arte_banda = list()
+
+    if probabilidade <= 50:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 60:
+            nome_arte_banda.append(choice(indie_fem))
+            if choice(indie_fem) not in nome_arte_banda:
+                nome_arte_banda.append(choice(indie_fem))
+        else:
+            nome_arte_banda.append(choice(indie_fem))
+    else:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 60:
+            nome_arte_banda.append(choice(indie_masc))
+            if choice(indie_masc) not in nome_arte_banda:
+                nome_arte_banda.append(choice(indie_masc))
+        else:
+            nome_arte_banda.append(choice(indie_masc))
+    return ' '.join(nome_arte_banda[0:])
+
+def nome_samba(probabilidade):
+    samba_masc = [['Zeca', 'Arlindo', 'Diogo', 'Nogueira', 'Xand', 'Cumpadi', 'Cartola', 'Mumuzinho', 'Tiago', 'Chico', 'Paulinho', 'Noel', 'Marcinho'], ['Cruz', 'Pagodinho', 'Washington','Mané', 'Qualé', 'Jorge', 'Aragão', 'Da Viola', 'Rosa']]
+    samba_fem = [['Ana', 'Beth', 'Alcione', 'Carvalho', 'Dona', 'Ivone', 'Teresa', 'Leci', 'Martha', 'Paola', 'Clara', 'Nilze'], ['Lara', 'Cristina', 'Brandão', 'Cristina', 'De Lara', 'Nunes', 'Mariene', 'De Castro']]
+
+    nome_art_banda = list()
+
+    if probabilidade <= 20:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 60:
+            nome_art_banda.append(choice(samba_fem[0]))
+            nome_art_banda.append(choice(samba_fem[1]))
+        else:
+            nome_art_banda.append(choice(samba_fem[0]))
+    else:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 60:
+            nome_art_banda.append(choice(samba_masc[0]))
+            nome_art_banda.append(choice(samba_masc[1]))
+        else:
+            nome_art_banda.append(choice(samba_masc[0]))
+    return ' '.join(nome_art_banda[0:])
+
+def nome_eletronica(probabilidade):
+    eletronica = ['Fog', 'Sampa', 'Alok', 'David', 'Gueta', 'Snake', 'Chainsmoker', 'Rule', 'Avicii', 'Bambo', 'Vapo',
+    'Avek', 'Light', 'Trap', 'Vapo', 'Mathias', 'Yanis', 'Ludaguy', 'Walk', 'Drinker']
+
+    nome_art_banda = list()
+
+    if probabilidade <= 50:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 50:
+            nome_art_banda.append(f'DJ {choice(eletronica)}')
+            if choice(eletronica) not in nome_art_banda:
+                nome_art_banda.append(choice(eletronica))
+        else:
+            nome_art_banda.append(choice(eletronica))
+            if choice(eletronica) not in nome_art_banda:
+                nome_art_banda.append(choice(eletronica))
+    else:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 50:
+            nome_art_banda.append(f'DJ {choice(eletronica)}')
+        else:
+            nome_art_banda.append(choice(eletronica))
+    return ' '.join(nome_art_banda[0:])
+
+def nome_rock(probabilidade):
+    rock = ['Beatles', 'Rolling', 'Stones', 'Black', 'Sabath', 'Killers', 'Strokes', 'Tame', 'Impala', 'Guns', 'Roses', 'Pond',
+    'Pixies', 'Police', 'Doors', 'Joy', 'Division', 'Led', 'Zepellin', 'Nirvana', 'Queen', 'Iron', 'Maiden', 'Mettalica', 'Pink', 'Floyd',
+    'Ramones', 'Bon', 'Jovi', 'Scorpions', 'Kiss', 'Rush', 'Eagles', 'Foo', 'Fighters', 'Linkin', 'Park', 'Slayer', 'Journey', 'Tool']
+
+    nome_art_banda = list()
+
+    if probabilidade <= 35:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 60:
+            nome_art_banda.append(f'The {choice(rock)}')
+        else:
+            nome_art_banda.append(choice(rock))
+    else:
+        probabilidade_in = randint(1, 100)
+        if probabilidade_in <= 30:
+            nome_art_banda.append(f'The {choice(rock)}')
+            if choice(rock) not in nome_art_banda:
+                nome_art_banda.append(choice(rock))
+        else:
+            nome_art_banda.append(choice(rock))
+            if choice(rock) not in nome_art_banda:
+                nome_art_banda.append(choice(rock))
+    return ' '.join(nome_art_banda[0:])
