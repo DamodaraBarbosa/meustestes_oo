@@ -1,11 +1,13 @@
 from random import randint, uniform, choice, randrange
+
+from matplotlib import artist
 from func_art_banda import nome_eletronica, nome_funk, nome_hiphop, nome_indie, nome_mpb, nome_pop, nome_rock, nome_samba, nome_sertanejo, num_curtidas, num_fas, num_faturamento
 
 art_banda = dict()
 catalogo = list()
 
 
-for contador in range(1, 3):
+for contador in range(1, 21):
     generos = ['MPB', 'Rock', 'Indie', 'Funk', 'Sertanejo', 'Hip hop', 'Samba', 'Pop', 'Eletrônica']
     genero_random = choice(generos)
 
@@ -52,6 +54,14 @@ for contador in range(1, 3):
     art_banda['fãs'] = num_fas(genero_random)
     art_banda['curtidas'] = num_curtidas(genero_random)
     art_banda['faturamento'] = num_faturamento(genero_random)
-    catalogo.append(art_banda)
+    catalogo.append(art_banda.copy())
 
-print(catalogo)
+texto = ''
+arquivo = open('dados_catalogo.txt', 'w')
+
+for index, artistas in enumerate(catalogo):
+    linha_art_banda = ''
+    linha_art_banda += (f"conta{index+1} = ('{artistas['nome']}', '{artistas['gênero']}', '{artistas['tipo']}', {artistas['fãs']}, {artistas['curtidas']}, {artistas['faturamento']})")
+    linha_art_banda += '\n'
+    texto += linha_art_banda
+arquivo.writelines(texto)

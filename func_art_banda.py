@@ -265,20 +265,20 @@ def num_curtidas(genero):
 
 def num_faturamento(genero):
     if genero == 'MPB':
-        return f'USD{(uniform(50000, 1000000))}/ano'
+        return f'{uniform(50000, 1000000):.2}'
     elif genero == 'Pop':
-        return f'USD {(randint(100000, 20000000)):.2f}/ano'
+        return f'{uniform(100000, 20000000):.2f}'
     elif genero == 'Funk':
-        return f'USD {(randint(300000, 4000000)):.2f}/ano'
+        return f'{uniform(300000, 4000000):.2f}'
     elif genero == 'Hip hop':
-        return f'USD {(randint(400000, 12000000)):.2f}/ano'
+        return f'{uniform(400000, 12000000):.2f}'
     elif genero == 'Indie':
-        return f'USD {(randint(100000, 3000000)):.2f}/ano'
+        return f'{uniform(100000, 3000000):.2f}'
     elif genero == 'Sertanejo':
-        return f'USD {(randint(500000, 8000000)):.2f}/ano'
+        return f'{uniform(500000, 8000000):.2f}'
     elif genero == 'Samba':
-        return f'USD {(randint(100000, 3000000)):.2f}/ano'
+        return f'{uniform(100000, 3000000):.2f}'
     elif genero == 'Eletrônica':
-        return f'USD {(randint(500000, 5000000)):.2f}/ano'
+        return f'{uniform(500000, 5000000):.2f}'
     else:
-        return f'USD {(randint(600000, 16000000)):.2f}/ano'
+        return f'{uniform(600000, 16000000):.2f}'
