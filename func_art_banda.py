@@ -81,34 +81,33 @@ def nome_funk(probabilidade):
     return ' '. join(nome_art_banda[0:])
 
 def nome_sertanejo(probabilidade):
-    sert_masc = ['Bruno', 'Camargo', 'Matheus', 'Zezé', 'Gustavo', 'Lima', 'Roger', 'Beto', 'Barreto', 'Pablo', 'Costa',
-    'Eduardo', 'Walter', 'Fabiano', 'Menotti', 'Bosco', 'João', 'Kauan', 'Mioto', 'Nathan']
-    sert_fem = ['Simone', 'Simaria', 'Maiara', 'Maraísa','Fernandes', 'Mendonça', 'Marília', 'Paula', 'Roberta', 'Miranda',
-    'Prado', 'Luana', 'Almeida', 'Solange', 'Maria', 'Fagundes', 'Mattos', 'Rafaela', 'Viola', 'Pinheiro']
+    sert_masc = [['Bruno', 'Matheus', 'Zezé', 'Gustavo', 'Roger', 'Beto', 'Pablo', 'Walter', 'Fabiano', 'Eduardo'], ['Camargo',  'Lima', 'Barreto', 'Costa', 
+    'Menotti', 'Bosco', 'João', 'Kauan', 'Mioto', 'Nathan']]
+    sert_fem = [['Simone', 'Simaria', 'Maiara', 'Maraísa', 'Marília', 'Paula', 'Roberta', 'Luana', 'Rafaela', 'Solange', 'Maria'], ['Fernandes', 'Mendonça', 'Miranda',
+    'Prado', 'Almeida', 'Fagundes', 'Mattos', 'Viola', 'Pinheiro']]
 
     nome_art_banda = list()
 
     if probabilidade <= 65:
         probabilidade_in = randint(1, 100)
         if probabilidade_in <= 35:
-            nome_art_banda.append(f'{choice(sert_masc)} &')
-            if choice(sert_masc) not in nome_art_banda:
-                nome_art_banda.append(choice(sert_masc))
+            nome_art_banda.append(f'{choice(sert_masc[0])} &')
+            if choice(sert_masc[0]) not in nome_art_banda:
+                nome_art_banda.append(choice(sert_masc[0]))
         else:
-            nome_art_banda.append(choice(sert_masc))
-            if choice(sert_masc) not in nome_art_banda:
-                nome_art_banda.append(choice(sert_masc))
+            nome_art_banda.append(choice(sert_masc[0]))
+            nome_art_banda.append(choice(sert_masc[1])) 
     else:
         probabilidade_in = randint(1, 100)
         if probabilidade_in <= 35:
-            nome_art_banda.append(f'{choice(sert_fem)} &')
+            nome_art_banda.append(f'{choice(sert_fem[0])} &')
             if choice(sert_fem) not in nome_art_banda:
-                nome_art_banda.append(choice(sert_fem))
+                nome_art_banda.append(choice(sert_fem[0]))
         else:
-            nome_art_banda.append(choice(sert_fem))
+            nome_art_banda.append(choice(sert_fem[0]))
             if choice(sert_fem) not in nome_art_banda:
-                nome_art_banda.append(choice(sert_fem))
-        return ' '.join(nome_art_banda[0:])
+                nome_art_banda.append(choice(sert_fem[1]))
+    return ' '.join(nome_art_banda[0:])
 
 def nome_hiphop(probabilidade):
     hiphop = ['Chris', 'Luda', 'Jay', 'Akon', 'Z', 'Steve', 'Knight', 'Eminem', 'Fifty', 'Lil', 'Brown', 'Mac', 'Book',
@@ -223,3 +222,63 @@ def nome_rock(probabilidade):
             if choice(rock) not in nome_art_banda:
                 nome_art_banda.append(choice(rock))
     return ' '.join(nome_art_banda[0:])
+
+def num_fas(genero):
+    if genero == 'MPB':
+        return (randint(50000, 1000000))
+    elif genero == 'Pop':
+        return (randint(1000000, 20000000))
+    elif genero == 'Funk':
+        return (randint(300000, 4000000))
+    elif genero == 'Hip hop':
+        return (randint(400000, 12000000))
+    elif genero == 'Indie':
+        return (randint(100000, 3000000))
+    elif genero == 'Sertanejo':
+        return (randint(500000, 8000000))
+    elif genero == 'Samba':
+        return (randint(100000, 3000000))
+    elif genero == 'Eletrônica':
+        return (randint(500000, 5000000))
+    else:
+        return (randint(6000000, 16000000))
+
+def num_curtidas(genero):
+    if genero == 'MPB':
+        return (randint(5000, 100000))
+    elif genero == 'Pop':
+        return (randint(100000, 2000000))
+    elif genero == 'Funk':
+        return (randint(30000, 400000))
+    elif genero == 'Hip hop':
+        return (randint(40000, 1200000))
+    elif genero == 'Indie':
+        return (randint(10000, 300000))
+    elif genero == 'Sertanejo':
+        return (randint(50000, 800000))
+    elif genero == 'Samba':
+        return (randint(10000, 300000))
+    elif genero == 'Eletrônica':
+        return (randint(50000, 500000))
+    else:
+        return (randint(600000, 1600000))
+
+def num_faturamento(genero):
+    if genero == 'MPB':
+        return f'USD{(uniform(50000, 1000000))}/ano'
+    elif genero == 'Pop':
+        return f'USD {(randint(100000, 20000000)):.2f}/ano'
+    elif genero == 'Funk':
+        return f'USD {(randint(300000, 4000000)):.2f}/ano'
+    elif genero == 'Hip hop':
+        return f'USD {(randint(400000, 12000000)):.2f}/ano'
+    elif genero == 'Indie':
+        return f'USD {(randint(100000, 3000000)):.2f}/ano'
+    elif genero == 'Sertanejo':
+        return f'USD {(randint(500000, 8000000)):.2f}/ano'
+    elif genero == 'Samba':
+        return f'USD {(randint(100000, 3000000)):.2f}/ano'
+    elif genero == 'Eletrônica':
+        return f'USD {(randint(500000, 5000000)):.2f}/ano'
+    else:
+        return f'USD {(randint(600000, 16000000)):.2f}/ano'
